@@ -1,0 +1,15 @@
+# 2. Напишите функцию, которая принимает на вход строку - абсолютный путь до файла.
+# Функция возвращает кортеж из трёх элементов: путь, имя файла, расширение файла.
+
+def result_tuple(link):
+    file_extension = link.split('.') # Расширение файла
+    file_name = file_extension[0].split('\\') #Название файла
+    link = link[:len(file_extension[0])-len(file_name[-1])] #Путь до файла
+
+    return link, file_name[-1], file_extension[-1]
+
+# link = input()
+
+link = r'C:\Users\gnaru\Desktop\Котики\гифки-webm-котэ-заснул-8411863.webm'
+
+print(result_tuple(link))
