@@ -1,0 +1,17 @@
+# Создайте функцию генератор чисел Фибоначчи
+
+def generator_fibonachchi():
+    """Функция-генератор чисел Фибоначи"""
+    a = 0
+    b = 1
+    while True:
+        yield a # возвращаю это число
+        c = a + b
+        a = b
+        b = c
+
+# Пример использования генератора
+for i in generator_fibonachchi():
+    if i > 1000:
+        break
+    print(i, end=" ")
